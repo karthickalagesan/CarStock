@@ -1,0 +1,77 @@
+<div>
+  <h1 class="text-align">Check Total Car Stock</h1>
+  <br />
+  <form class="text-align">
+    <mat-form-field appearance="fill">
+      <mat-label>Brand</mat-label>
+      <mat-select
+        (selectionChange)="onBrandChange()"
+        [formControl]="brand"
+        multiple
+      >
+        <mat-option *ngFor="let brand of brandList" [value]="brand">{{
+          brand
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Year</mat-label>
+      <mat-select
+        (selectionChange)="onYearChange()"
+        [formControl]="year"
+        multiple
+      >
+        <mat-option *ngFor="let year of yearList" [value]="year">{{
+          year
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Segment</mat-label>
+      <mat-select
+        (selectionChange)="onSegmentChange()"
+        [formControl]="segment"
+        multiple
+      >
+        <mat-option *ngFor="let segment of segmentList" [value]="segment">{{
+          segment
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>Engine</mat-label>
+      <mat-select
+        (selectionChange)="onEngineChange()"
+        [formControl]="engine"
+        multiple
+      >
+        <mat-option *ngFor="let engine of engineList" [value]="engine">{{
+          engine
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+  <br />
+  <div class="container text-align">
+    <div class="row">
+      <button mat-raised-button color="primary" (click)="updateList()">
+        Reset
+      </button>
+      <button mat-raised-button color="primary" (click)="totalCarStock()">
+        Search
+      </button>
+    </div>
+  </div>
+  <br />
+  <div class="container text-align">
+    <h1 class="text-align">Total Car Stock</h1>
+    <br />
+    <h1 class="text-align text-color text-font-size">
+      {{ totalCarStockCount }}
+    </h1>
+  </div>
+</div>
